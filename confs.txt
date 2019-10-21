@@ -1,0 +1,12 @@
+No ficheiro:
+httpd.conf
+Na pasta do Apache (no caso do XAMPP) em:
+C:\xampp\apache\conf
+
+Fazer a edição do ficheiro, colocando o seguinte:
+
+<Directory "C:/<caminho_completo_para_a_pasta_do_proj>/brawlstars">
+    Options Indexes FollowSymLinks Includes ExecCGI
+    AllowOverride All
+    Require all granted
+</Directory>
