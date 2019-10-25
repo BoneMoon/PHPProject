@@ -1,41 +1,11 @@
 <!doctype html>
 <html lang="en">
 
-<<<<<<< HEAD
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/cardslider.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <style>
-      body{background-color: royalblue;}
-    </style>
-  </head>
-  <body>
-    <nav class="navbar PersonalizaNavBar">
-      <a class="navbar-brand" href="#">
-        <img src="assets/imgs/Brawl_Stars_Logo.png" width="50" height="40" alt="">
-      </a>
-      <form class="form-inline mx-auto">
-        <input class="form-control mr-sm-2" id="CampoPesquiza" type="search" placeholder="Procurar Brawller" aria-label="Search">
-        <button class="btn my-2 my-sm-0" id="NavButton" type="submit"><a >Pesquisar</a></button>
-      </form>
-      </nav>
-      
-      <!--<section class="container pt-3" style="margin-top: 80px">
-        <div class="row mx-auto">
-          <div class="col-12">
-            <h1 style="color: white; text-align: center;">Lista de Brawllers</h1>
-          </div>
-        </div>
-      </section>-->
-=======
 <head>
   <title>Brawlstars ECGM</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
->>>>>>> 4b1e20861d3af6c327e6750bdb1122ee5eb2006b
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -81,98 +51,92 @@
     </div>
 
 
-<<<<<<< HEAD
-        <div class="container pt-0 mt-2 carousel-inner">
-          <div class="row row-equal carousel-item active mt-0">
-            <div class="col-md-4">
-              <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
-                <div class="card-img-top card-img-top-250">
-                  <img src="assets/imgs/Gene.png" 
-                  alt="imageLeft" 
-                  class="img-fluid" 
-                  style="border-radius: 20px 20px 0px 0px;">
-                </div>
-                <div class="card-block pt-2">
-                  <div class="card-header"><h3>Brawler esquerda</h3></div>
-                  <div class="card-text">Dados Brawler</div>
-                </div>
-=======
-    <div class="container pt-0 mt-2 carousel-inner">
+    <<<<<<< HEAD <div class="container pt-0 mt-2 carousel-inner">
       <div class="row row-equal carousel-item active mt-0">
         <div class="col-md-4">
-          <div class="card mx-auto" style="height: 90%; width: 90%">
+          <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
             <div class="card-img-top card-img-top-250">
-              <img src="assets/imgs/Gene.png" alt="imageLeft" class="img-fluid">
+              <img src="assets/imgs/Gene.png" alt="imageLeft" class="img-fluid" style="border-radius: 20px 20px 0px 0px;">
             </div>
             <div class="card-block pt-2">
               <div class="card-header">
                 <h3>Brawler esquerda</h3>
->>>>>>> 4b1e20861d3af6c327e6750bdb1122ee5eb2006b
               </div>
               <div class="card-text">Dados Brawler</div>
             </div>
-          </div>
-        </div>
+            =======
+            <div class="container pt-0 mt-2 carousel-inner">
+              <div class="row row-equal carousel-item active mt-0">
+                <div class="col-md-4">
+                  <div class="card mx-auto" style="height: 90%; width: 90%">
+                    <div class="card-img-top card-img-top-250">
+                      <img src="assets/imgs/Gene.png" alt="imageLeft" class="img-fluid">
+                    </div>
+                    <div class="card-block pt-2">
+                      <div class="card-header">
+                        <h3>Brawler esquerda</h3>
+                        >>>>>>> 4b1e20861d3af6c327e6750bdb1122ee5eb2006b
+                      </div>
+                      <div class="card-text">Dados Brawler</div>
+                    </div>
+                  </div>
+                </div>
 
-<<<<<<< HEAD
-            <div class="col-md-4">
-              <div class="card cardLayout">
-                <div class="card-img-top card-img-top-250">
-                  <img src="assets/imgs/Jessie.png" 
-                  alt="imageLeft" 
-                  class="img-fluid"
-                  style="border-radius: 20px 20px 0px 0px;">
-                </div>
-                <div class="card-block pt-2">
-                  <div class="card-header"><h3>Brawler meio</h3></div>
-                  <div class="card-text">Dados Brawler</div>
-                </div>
-=======
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-img-top card-img-top-250">
-              <img src="assets/imgs/Jessie.png" alt="imageLeft" class="img-fluid">
-            </div>
-            <div class="card-block pt-2">
-              <div class="card-header">
-                <h3>Brawler meio</h3>
->>>>>>> 4b1e20861d3af6c327e6750bdb1122ee5eb2006b
-              </div>
-              <div class="card-text">Dados Brawler</div>
-            </div>
-          </div>
-        </div>
+                <<<<<<< HEAD <div class="col-md-4">
+                  <div class="card cardLayout">
+                    <div class="card-img-top card-img-top-250">
+                      <img src="assets/imgs/Jessie.png" alt="imageLeft" class="img-fluid" style="border-radius: 20px 20px 0px 0px;">
+                    </div>
+                    <div class="card-block pt-2">
+                      <div class="card-header">
+                        <h3>Brawler meio</h3>
+                      </div>
+                      <div class="card-text">Dados Brawler</div>
+                    </div>
+                    =======
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-img-top card-img-top-250">
+                          <img src="assets/imgs/Jessie.png" alt="imageLeft" class="img-fluid">
+                        </div>
+                        <div class="card-block pt-2">
+                          <div class="card-header">
+                            <h3>Brawler meio</h3>
+                            >>>>>>> 4b1e20861d3af6c327e6750bdb1122ee5eb2006b
+                          </div>
+                          <div class="card-text">Dados Brawler</div>
+                        </div>
+                      </div>
+                    </div>
 
-<<<<<<< HEAD
-            <div class="col-md-4">
-              <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
-                <div class="card-img-top card-img-top-250">
-                  <img src="assets/imgs/Leon.png" 
-                  alt="imageLeft" 
-                  class="img-fluid"
-                  style="border-radius: 20px 20px 0px 0px;">
-                </div>
-                <div class="card-block pt-2">
-                  <div class="card-header"><h3>Brawler Direita</h3></div>
-                  <div class="card-text">Dados Brawler</div>
-                </div>
-=======
-        <div class="col-md-4">
-          <div class="card mx-auto" style="height: 90%; width: 90%">
-            <div class="card-img-top card-img-top-250">
-              <img src="assets/imgs/Leon.png" alt="imageLeft" class="img-fluid">
-            </div>
-            <div class="card-block pt-2">
-              <div class="card-header">
-                <h3>Brawler Direita</h3>
->>>>>>> 4b1e20861d3af6c327e6750bdb1122ee5eb2006b
-              </div>
-              <div class="card-text">Dados Brawler</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                    <<<<<<< HEAD <div class="col-md-4">
+                      <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
+                        <div class="card-img-top card-img-top-250">
+                          <img src="assets/imgs/Leon.png" alt="imageLeft" class="img-fluid" style="border-radius: 20px 20px 0px 0px;">
+                        </div>
+                        <div class="card-block pt-2">
+                          <div class="card-header">
+                            <h3>Brawler Direita</h3>
+                          </div>
+                          <div class="card-text">Dados Brawler</div>
+                        </div>
+                        =======
+                        <div class="col-md-4">
+                          <div class="card mx-auto" style="height: 90%; width: 90%">
+                            <div class="card-img-top card-img-top-250">
+                              <img src="assets/imgs/Leon.png" alt="imageLeft" class="img-fluid">
+                            </div>
+                            <div class="card-block pt-2">
+                              <div class="card-header">
+                                <h3>Brawler Direita</h3>
+                                >>>>>>> 4b1e20861d3af6c327e6750bdb1122ee5eb2006b
+                              </div>
+                              <div class="card-text">Dados Brawler</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
   </section>
 
   <!-- Optional JavaScript -->

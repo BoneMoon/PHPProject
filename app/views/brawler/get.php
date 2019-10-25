@@ -1,6 +1,6 @@
 <?php require "scrips/bootstrap.php"; ?>
 
-<div class="card" style="width: 18rem;">
+<div class="card cardLayout" style="width: 18rem;">
   <?php foreach ($brawler as $prop => $val) : ?>
     <?php if ($prop === "id") : ?>
       <?php continue ?>
