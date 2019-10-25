@@ -26,13 +26,13 @@
       </form>
       </nav>
       
-      <section class="container pt-3" style="margin-top: 80px">
+      <!--<section class="container pt-3" style="margin-top: 80px">
         <div class="row mx-auto">
           <div class="col-12">
             <h1 style="color: white; text-align: center;">Lista de Brawllers</h1>
           </div>
         </div>
-      </section>
+      </section>-->
 
       <section class="carousel slider" data-ride="carousel" id="postsCarousel">
         <div class="container">
@@ -54,9 +54,12 @@
         <div class="container pt-0 mt-2 carousel-inner">
           <div class="row row-equal carousel-item active mt-0">
             <div class="col-md-4">
-              <div class="card mx-auto" style="height: 90%; width: 90%">
+              <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
                 <div class="card-img-top card-img-top-250">
-                  <img src="assets/imgs/Gene.png" alt="imageLeft" class="img-fluid">
+                  <img src="assets/imgs/Gene.png" 
+                  alt="imageLeft" 
+                  class="img-fluid" 
+                  style="border-radius: 20px 20px 0px 0px;">
                 </div>
                 <div class="card-block pt-2">
                   <div class="card-header"><h3>Brawler esquerda</h3></div>
@@ -66,9 +69,12 @@
             </div>
 
             <div class="col-md-4">
-              <div class="card">
+              <div class="card cardLayout">
                 <div class="card-img-top card-img-top-250">
-                  <img src="assets/imgs/Jessie.png" alt="imageLeft" class="img-fluid">
+                  <img src="assets/imgs/Jessie.png" 
+                  alt="imageLeft" 
+                  class="img-fluid"
+                  style="border-radius: 20px 20px 0px 0px;">
                 </div>
                 <div class="card-block pt-2">
                   <div class="card-header"><h3>Brawler meio</h3></div>
@@ -78,9 +84,12 @@
             </div>
 
             <div class="col-md-4">
-              <div class="card mx-auto" style="height: 90%; width: 90%">
+              <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
                 <div class="card-img-top card-img-top-250">
-                  <img src="assets/imgs/Leon.png" alt="imageLeft" class="img-fluid">
+                  <img src="assets/imgs/Leon.png" 
+                  alt="imageLeft" 
+                  class="img-fluid"
+                  style="border-radius: 20px 20px 0px 0px;">
                 </div>
                 <div class="card-block pt-2">
                   <div class="card-header"><h3>Brawler Direita</h3></div>
