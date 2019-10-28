@@ -14,7 +14,7 @@ class Brawlers
   public static function findAll()
   {
     $conn = new Db();
-    $response = $conn->execQuery('SELECT id, name FROM brawlers');
+    $response = $conn->execQuery('SELECT * FROM brawlers');
     return $response;
   }
 

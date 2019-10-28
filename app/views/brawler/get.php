@@ -13,23 +13,14 @@
 <body>
 
   <div class="card cardLayout" style="width: 18rem;">
-    <?php foreach ($brawler as $prop => $val) : ?>
-      <?php if ($prop === "id") : ?>
-        <?php continue ?>
-      <?php endif; ?>
-      <?php if ($prop === "image") : ?>
-        <img src="<?= "/brawlstars/$val" ?>" class="card-img-top" alt="brawler image">
-        <div class="card-body">
-        <?php else : ?>
-          <?php if ($prop === "name") : ?>
-            <h5 class="card-title"> <?= $val ?> </h5>
-          <?php else : ?>
-            <?php $prop ?> <?php $val ?>
-            <p class="card-text"> <?= $prop . ': ' . $val ?> </p>
-          <?php endif; ?>
-        <?php endif; ?>
-      <?php endforeach; ?>
-        </div>
+    <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="card-img-top" alt="brawler image">
+    <div class="card-body">
+      <h5 class="card-title"> <?= $brawler["name"] ?> </h5>
+      <p class="card-text"> <?= 'Rarity: ' . $brawler["rarity"] ?> </p>
+      <p class="card-text"> <?= 'Role: ' . $brawler["role"]  ?> </p>
+      <p class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </p>
+      <p class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </p>
+    </div>
   </div>
   <?php require __DIR__ . "/../partias/scripts.php" ?>
 </body>
