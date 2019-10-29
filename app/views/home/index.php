@@ -26,15 +26,15 @@
       </form>
       </nav>
       
-      <!--<section class="container pt-3" style="margin-top: 80px">
+      <section class="container pt-3" style="margin-top: 80px">
         <div class="row mx-auto">
           <div class="col-12">
-            <h1 style="color: white; text-align: center;">Lista de Brawllers</h1>
+            <h1 style="color: white; text-align: center;">**BrawlSatrs**</h1>
           </div>
         </div>
-      </section>-->
+      </section>
 
-      <section class="carousel slider" data-ride="carousel" id="postsCarousel">
+      <!--<section class="carousel slider" data-ride="carousel" id="postsCarousel">
         <div class="container">
           <div class="row">
             <div class="col-12 text-right mb-4">
@@ -48,7 +48,7 @@
               <i class="fa fa-lg fa-chevron-right" style="color: white;"></i></a>
             </div>
           </div>
-        </div>
+        </div>-->
 
 
         <div class="container pt-0 mt-2 carousel-inner">

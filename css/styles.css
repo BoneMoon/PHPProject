@@ -28,3 +28,25 @@ body{
 .cnt{
     text-align: center;
 }
+
+.PersonalizarCardList{
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.imageCards{
+    border-radius: 20px 20px 0px 0px;
+}
+
+.card.scaleAnim:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.specifiedBrawler{
+    width: 80%;
+    /* display: block; */
+    position: absolute;
+    top: 50%;
+}

@@ -7,12 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-  <?php require __DIR__ . "/../partias/style.php" ?>
+  <?php require __DIR__ . "/../partial/style.php" ?>
+  <?php require __DIR__ . "/../partial/common.php" ?>
 </head>
 
 <body>
 
-  <div class="card cardLayout" style="width: 18rem;">
+  <!-- <div class="card cardLayout" style="width: 18rem;">
     <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="card-img-top" alt="brawler image">
     <div class="card-body">
       <h5 class="card-title"> <?= $brawler["name"] ?> </h5>
@@ -21,8 +22,16 @@
       <p class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </p>
       <p class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </p>
     </div>
+  </div> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="specifiedBrawler" alt="brawler image">
+      </div>
+    </div>
   </div>
-  <?php require __DIR__ . "/../partias/scripts.php" ?>
+  <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>
 
 </html>
