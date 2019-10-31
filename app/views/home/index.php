@@ -51,16 +51,13 @@
         </div>-->
 
 
-        <div class="container pt-0 mt-2 carousel-inner">
-          <div class="row row-equal carousel-item active mt-0">
+        <div class="container">
+          <div class="row row-equal">
             <div class="col-md-4">
-              <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
-                <div class="card-img-top card-img-top-250">
+              <div class="card mx-auto cardLayout PersonalizarCardList">
                   <img src="assets/imgs/Gene.png" 
                   alt="imageLeft" 
-                  class="img-fluid" 
-                  style="border-radius: 20px 20px 0px 0px;">
-                </div>
+                  class="img-fluid imageCards">
                 <div class="card-block pt-2">
                   <div class="card-header"><h3>Brawler esquerda</h3></div>
                   <div class="card-text">Dados Brawler</div>
@@ -69,13 +66,10 @@
             </div>
 
             <div class="col-md-4">
-              <div class="card cardLayout">
-                <div class="card-img-top card-img-top-250">
+              <div class="card cardLayout PersonalizarCardList">
                   <img src="assets/imgs/Jessie.png" 
                   alt="imageLeft" 
-                  class="img-fluid"
-                  style="border-radius: 20px 20px 0px 0px;">
-                </div>
+                  class="img-fluid imageCards">
                 <div class="card-block pt-2">
                   <div class="card-header"><h3>Brawler meio</h3></div>
                   <div class="card-text">Dados Brawler</div>
@@ -84,13 +78,10 @@
             </div>
 
             <div class="col-md-4">
-              <div class="card mx-auto cardLayout" style="height: 90%; width: 90%">
-                <div class="card-img-top card-img-top-250">
+              <div class="card mx-auto cardLayout PersonalizarCardList">
                   <img src="assets/imgs/Leon.png" 
                   alt="imageLeft" 
-                  class="img-fluid"
-                  style="border-radius: 20px 20px 0px 0px;">
-                </div>
+                  class="img-fluid imageCards">
                 <div class="card-block pt-2">
                   <div class="card-header"><h3>Brawler Direita</h3></div>
                   <div class="card-text">Dados Brawler</div>

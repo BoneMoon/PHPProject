@@ -27,7 +27,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="specifiedBrawler" alt="brawler image">
+          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="specifiedBrawler" alt="brawler image" style="background-color: white; padding: 80px; border: 10px solid black;"> 
       </div>
     </div>
   </div>
