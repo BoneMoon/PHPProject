@@ -25,9 +25,16 @@
   </div> -->
 
   <div class="container">
-    <div class="row">
+    <div class="row specifiedBrawler">
       <div class="col-md-6">
-          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="specifiedBrawler" alt="brawler image" style="background-color: white; padding: 80px; border: 10px solid black;"> 
+          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="" alt="brawler image" style="background-color: white; padding: 80px; border: 10px solid black;"> 
+      </div>
+      <div class="col-md-6">
+      <h5 class="card-title"> <?= $brawler["name"] ?> </h5>
+      <p class="card-text"> <?= 'Rarity: ' . $brawler["rarity"] ?> </p>
+      <p class="card-text"> <?= 'Role: ' . $brawler["role"]  ?> </p>
+      <p class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </p>
+      <p class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </p>
       </div>
     </div>
   </div>
