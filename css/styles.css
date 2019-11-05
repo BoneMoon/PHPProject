@@ -1,7 +1,6 @@
 .PersonalizaNavBar{
     background-color: rgb(0, 44, 139);
     color: royalblue;
-    /*height: 65px;*/
     };
 
 body{
@@ -46,8 +45,7 @@ body{
 
 .specifiedBrawler{
     width: 90%;
-    position: absolute;
-    transform: translate(0%, 40%)
+    transform: translate(0%, 40%);
 }
 
 .card-header {
@@ -65,16 +63,4 @@ body{
     background-color: white; 
     padding: 80px; 
     border: 10px solid black;
-}
-
-.carousel-inner > .row-equal.active,
-.carousel-inner > .row-equal.next,
-.carousel-inner > .row-equal.prev {
-    display: flex;
-}
-
-.carousel-inner > .row-equal.active.left,
-.carousel-inner > .row-equal.active.right {
-    opacity: 0.5;
-    display: flex;
 }

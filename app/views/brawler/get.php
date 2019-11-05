@@ -27,14 +27,21 @@
   <div class="container">
     <div class="row specifiedBrawler">
       <div class="col-md-6">
-          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="" alt="brawler image" style="background-color: white; padding: 80px; border: 10px solid black;"> 
+          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="" alt="brawler image" style="background-color: white; padding: 80px; border-radius: 10px"> 
       </div>
       <div class="col-md-6">
-      <h5 class="card-title"> <?= $brawler["name"] ?> </h5>
-      <p class="card-text"> <?= 'Rarity: ' . $brawler["rarity"] ?> </p>
-      <p class="card-text"> <?= 'Role: ' . $brawler["role"]  ?> </p>
-      <p class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </p>
-      <p class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </p>
+        <section style="background-color:white; height: 100%; width: 100%; border-radius: 10px;">
+          <div style="text-align: center;">
+          <h1 class="card-title mb-5" > <?= $brawler["name"] ?> </h1>
+          </div>
+          <div class="text-justify mt-5" style="padding-left: 30%" >
+              <h3 class="card-text"> <?= 'Rarity: ' . $brawler["rarity"] ?> </h3>
+              <h3 class="card-text"> <?= 'Role: ' . $brawler["role"]  ?> </h3>
+              <h3 class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </h3>
+              <h3 class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </h3>
+          </div>
+        </section>
+      
       </div>
     </div>
   </div>

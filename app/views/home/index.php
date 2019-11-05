@@ -12,25 +12,12 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" type="text/css" href="css/cardslider.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <style>
-    body {
-      background-color: royalblue;
-    }
-  </style>
+  <?php require __DIR__ . "/../partial/style.php" ?>
+  <?php require __DIR__ . "/../partial/common.php" ?>
 </head>
-
+<!-- Título  -->
 <body>
-  <nav class="navbar PersonalizaNavBar">
-    <a class="navbar-brand" href="http://localhost/brawlstars/">
-      <img src="assets/imgs/Brawl_Stars_Logo.png" width="50" height="40" alt="">
-    </a>
-    <form class="form-inline mx-auto">
-      <input class="form-control mr-sm-2" id="CampoPesquiza" type="search" placeholder="Procurar Brawller" aria-label="Search">
-      <button class="btn my-2 my-sm-0" id="NavButton" type="submit"><a>Pesquisar</a></button>
-    </form>
-  </nav>
-
-  <section class="container pt-3" style="margin-top: 80px">
+  <section class="container mt-2" style="margin-top: 80px">
     <div class="row mx-auto">
       <div class="col-12">
         <h1 style="color: white; text-align: center;">**BrawlSatrs**</h1>
@@ -38,69 +25,70 @@
     </div>
   </section>
 
-  <!--<section class="carousel slider" data-ride="carousel" id="postsCarousel">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-right mb-4">
-              <a class="btn btn-outline-light prev" 
-              href="" 
-              title="go back">
-              <i class="fa fa-lg fa-chevron-left" style="color: white;"></i></a>
-              <a class="btn btn-outline-light next" 
-              href="" 
-              title="go foward">
-              <i class="fa fa-lg fa-chevron-right" style="color: white;"></i></a>
-            </div>
-          </div>
-        </div>-->
 
-
+<!-- Imagem Grande  -->
   <div class="container">
-    <div class="row row-equal">
+    <div class="row m-3">
+      <section>
+        <img class="mx-auto d-block" src="assets/imgs/imgHomePage.jpeg" alt="" style="width: 80%;">
+      </section>
+    </div>
+  </div>
+
+
+<!-- Cards  -->
+  <div class="container">
+    <div class="row m-5">
+<!-- Primeiro  -->
       <div class="col-md-4">
         <div class="card mx-auto cardLayout PersonalizarCardList">
+          <div>
           <img src="assets/imgs/Gene.png" alt="imageLeft" class="img-fluid imageCards">
-          <div class="card-block pt-2">
-            <div class="card-header">
-              <h3>Brawler esquerda</h3>
-            </div>
-            <div class="card-text">Dados Brawler</div>
+          </div>
+          <div>
+            <h5 class="card-title">Gene</h5>
           </div>
         </div>
       </div>
-
+<!-- Segundo  -->
       <div class="col-md-4">
         <div class="card cardLayout PersonalizarCardList">
-          <img src="assets/imgs/Jessie.png" alt="imageLeft" class="img-fluid imageCards">
-          <div class="card-block pt-2">
-            <div class="card-header">
-              <h3>Brawler meio</h3>
-            </div>
-            <div class="card-text">Dados Brawler</div>
+          <div>
+            <img src="assets/imgs/Jessie.png" alt="imageLeft" class="img-fluid imageCards">
+          </div>
+          <div>
+            <h5 class="card-title mx-auto" style="vertical-align : bottom;">Jessie</h5>
           </div>
         </div>
       </div>
-
+<!-- Terceiro  -->
       <div class="col-md-4">
         <div class="card mx-auto cardLayout PersonalizarCardList">
-          <img src="assets/imgs/Leon.png" alt="imageLeft" class="img-fluid imageCards">
-          <div class="card-block pt-2">
-            <div class="card-header">
-              <h3>Brawler Direita</h3>
-            </div>
-            <div class="card-text">Dados Brawler</div>
+          <div>
+            <img src="assets/imgs/Leon.png" alt="imageLeft" class="img-fluid imageCards">
+          </div>
+          <div>
+            <h5 class="card-title">Leon</h5>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </section>
 
+<!-- Butão de link para a lista de Brawlers  -->
+  </section>
+  <div class="container mt-5">
+    <div class="row mx-auto d-block">
+      <a href="<?= path("/brawler")?>"><button type="button" class="btn btn-lg btn-primary ative"> Ver Lista Completa de Brawlers</button></a>
+    </div>
+  </div>
+    
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>
 
 </html>
