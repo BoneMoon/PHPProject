@@ -1,5 +1,10 @@
 <?php
+
 session_start();
+
+if(!empty($_SESSION['id_utilizador'])) {
+    header('Location:path("/app/views/home/index.php)');
+}
 
 require_once("connection_params.php");
 $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
@@ -10,9 +15,12 @@ if ($conn->connect_error) {
 
 $mensagem="";
 
+// se(foi feito login)
+// NOTA PHP: a função empty verifica se determinada variável não está definida OU está vazia
 if(!empty($_POST['login'])) {
     
-
+    // neste ponto a variável global $_POST["login"] está definida e tem valor
+    // ir à base de dados extrair o utilizador ativo, com as credenciais introduzidas no formulário
     $sql = 'SELECT id_utilizador, nome FROM utilizador where ativo = 1 AND id_utilizador = ? AND palavra_passe = ?';
 
     $stmt = $conn->prepare($sql);
@@ -22,6 +30,7 @@ if(!empty($_POST['login'])) {
     
     $stmt->bind_param('ss', $_POST['utilizador'], $_POST['palavra_passe']);
 
+    /* Executar statement */
     $stmt->execute();
 
     $stmt->store_result();
@@ -33,30 +42,38 @@ if(!empty($_POST['login'])) {
 
         $_SESSION['id_utilizador']  = $id_utilizador;
         $_SESSION['nome']           = $nome;
+
+        header('Location:path("/app/views/home/index.php")');
     } else {
         $mensagem = 'Credenciais de acesso inválidas.';
     }
 }
 
 if(!empty($_POST['logout'])) {
-
+	
     session_unset();
 	session_destroy();
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-pt">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Iniciar Sessão</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta name="description" content="Template HTML base para as aulas">
+    <meta name="author" content="José Viana">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="css/sessoes.css?v=1.0">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
+
 <body>
     <div class="wrapper regis">
         <h2>Iniciar Sessão</h2>
@@ -101,6 +118,10 @@ if(!empty($_POST['logout'])) {
             ?>
 
         </div>
+        <div style="padding-top: 40px;">
+            <a href='<?php= path("/app/views/home/index.php")?>'>Voltar</a>
+        </div>
     </div>
 </body>
+
 </html>
