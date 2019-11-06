@@ -61,22 +61,46 @@ if(!empty($_POST['logout'])) {
     <div class="wrapper regis">
         <h2>Iniciar Sessão</h2>
         <p>Por favor introduza as suas credenciais para iniciar sessão.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Nome de utilizador</label>
-                <input type="text" name="username" class="form-control Irad" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Palavra-passe</label>
-                <input type="password" name="password" class="form-control Irad">
-                <span class="help-block"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary ButtonStyles" value="Iniciar sessão">
-            </div>
-            <p>Não possui uma conta? <a href="register.php">Registe-se agora</a>.</p>
-        </form>
+
+        <div style="padding-top: 40px;">
+
+            <?php 
+            if(empty($_SESSION['id_utilizador'])) {
+            ?>
+                <form action="login.php" method="post" id="frmLogin">
+                    
+                    <?php
+                    if(!empty($mensagem)) {
+                    ?>
+                        <div class="error-message"><?php echo $mensagem;?></div>	
+                    <?php
+                    } 
+                    ?>
+                    
+                    <div>
+                        <div>Utilizador</div>
+                        <div><input id="utilizador" name="utilizador" type="text"></div>
+                    </div>
+                    <div>
+                        <div>Palavra-passe</div>
+                        <div><input id="palavra_passe" name="palavra_passe" type="password"></div>
+                    </div>
+                    <div>
+                        <input type="submit" name="login" value="Iniciar sessão">
+                    </div>
+                </form>
+            <?php 
+            } else { 
+            ?>
+                <form action="login.php" method="post" id="frmLogout">
+                    <div><h2>Olá <?php echo $_SESSION['nome']?></h2></div>
+                    <div><input type="submit" name="logout" value="Terminar sessão" class="logout-button"></div>
+                </form>    
+            <?php
+            }
+            ?>
+
+        </div>
     </div>
 </body>
 </html>
