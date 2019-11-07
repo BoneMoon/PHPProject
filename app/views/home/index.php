@@ -20,20 +20,18 @@ if(!empty($_POST['logout'])) {
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <?php require __DIR__ . "/../partial/style.php" ?>
-  <?php require __DIR__ . "/../partial/common.php" ?>
 </head>
 <!-- Título  -->
 <body>
-
+<?php require __DIR__ . "/../partial/style.php" ?>
+<?php require __DIR__ . "/../partial/common.php" ?>
 <?php 
   if(empty($_SESSION['id_utilizador'])) {
 ?>
   <section class="container mt-2" style="margin-top: 80px">
     <div class="row mx-auto">
       <div class="col-12">
-        <h1 style="color: white; text-align: center;">**BrawlSatrs**</h1>
+        <h1 style="color: white; text-align: center;">**BrawlStars**</h1>
       </div>
     </div>
   </section>
@@ -102,7 +100,7 @@ if(!empty($_POST['logout'])) {
     <section class="container mt-2" style="margin-top: 80px">
     <div class="row mx-auto">
       <div class="col-12">
-        <h1 style="color: white; text-align: center;">**BrawlSatrs**</h1>
+        <h1 style="color: white; text-align: center;">**BrawlStars**</h1>
       </div>
     </div>
   </section>
