@@ -1,8 +1,13 @@
 <?php
-  require './app/load.php';
-  use app\core\App;
-  use app\core\Controller;
-  $app = new App();
+
+session_start();
+
+require './app/load.php';
+
+use app\core\App;
+use app\core\Controller;
+
+$app = new App();
 
 //======================================================================
 // NOTAS: 
@@ -12,4 +17,3 @@
 //   das classes.
 // > O PHP pode fazer o carregamento das classes quando estas são necessárias.
 //======================================================================
-?>
