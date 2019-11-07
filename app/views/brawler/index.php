@@ -8,10 +8,10 @@
   <title>Document</title>
 
   <?php require __DIR__ . "/../partial/style.php" ?>
-  <?php require __DIR__ . "/../partial/common.php" ?>
 </head>
 
 <body>
+  <?php require __DIR__ . "/../partial/navBar.php" ?>
   <section class="container pt-5" style="color: white; text-align: center">
     <h1>Lista de Brawlers</h1>
   </section>
