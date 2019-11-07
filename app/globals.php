@@ -1,6 +1,6 @@
 <?php
 
-define("APP_ROOT_URL", "http://localhost/PHPProject");
+define("APP_ROOT_URL", "http://localhost/brawlstars");
 
 
 function path(string $incompletePath)
