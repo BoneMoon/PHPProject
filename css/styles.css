@@ -62,3 +62,10 @@ body {
     padding: 80px;
     border: 10px solid black;
 }
+
+.preInputBrawler{
+    width: 100px;
+}
+.inputBrawler{
+    width: 300px;
+}
