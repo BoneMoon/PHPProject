@@ -1,6 +1,7 @@
 <?php
 
 use app\core\Controller;
+use app\core\Db;
 
 class Brawler extends Controller
 {
@@ -42,7 +43,42 @@ class Brawler extends Controller
       $this->pageNotFound();
     }
   }
+
+  // public function creatBrawler($data){
+  //   $Brawlers = $this->model('Brawlers');
+  
+  //     $this->view('brawler/creatBrawler', ['brawler' => $data]);
+  //   } else {
+  //     $this->pageNotFound();
+  //   }
+  // }
+
+  public function createBrawler(){
+    $data = [
+      "name" => $_POST["name"],
+      "rarity" => $_POST["rarity"],
+      // "image" => $_FILES["image"],
+      "role" => $_POST["role"],
+      "speed" => $_POST["speed"],
+      "health" => $_POST["health"]
+  ];
+
+
+    $conn = new Db();
+    $res = $conn->execNonQuery('INSERT INTO brawlers
+    (name, rarity, role, health, speed) 
+    VALUES (?, ?, ?, ?, ?)', ['sssss',[$data["name"], $data["rarity"], 
+    $data['role'], $data["health"], $data["speed"]]]);
+
+    header("Location: " . path("/"));
+    die();
+  }
+
+  public function criarBrawler(){
+    $this->view('brawler/creatBrawler');
+  }
 }
+
 
 // :: Scope Resolution Operator
 // Utilizado para acesso às propriedades e métodos das classes

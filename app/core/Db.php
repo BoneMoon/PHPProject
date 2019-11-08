@@ -60,6 +60,13 @@ class Db
     return $response;
   }
 
+  public function execNonQuery(string $sql, array $parameters = [])
+  {
+    $stmt = $this->conn->prepare($sql);
+    $this->setParameters($stmt, $parameters);
+    return $stmt->execute();
+  }
+
   // *1
   // ... Operador splat
   // Uma das funções deste operador é transformar um array em parâmetros separados a passar para
