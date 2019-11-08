@@ -1,40 +1,38 @@
-.PersonalizaNavBar{
-    background-color: rgb(0, 44, 139);
-    color: royalblue;
-    };
+.PersonalizaNavBar {
+    background-color: rgb(0, 44, 139) !important;
+    color: royalblue !important;
+}
 
-body{
+body {
     background-color: royalblue;
 }
 
-#CampoPesquiza{
-    width: 500px; 
-    text-align: center; 
+#CampoPesquiza {
+    text-align: center;
     border-radius: 20px;
     border: 2px solid black;
     height: 40px;
 }
 
-#NavButton{
+#NavButton {
     border-radius: 20px;
     background-color: rgb(255, 192, 34);
     color: white;
-    font-size: 17px;
-    font-weight: bold;
     font-weight: 600;
+    text-align: center;
     border: 2px solid black;
 }
-.cnt{
+.cnt {
     text-align: center;
 }
 
-.PersonalizarCardList{
+.PersonalizarCardList {
     margin: 5px;
     padding: 10px;
     text-align: center;
 }
 
-.imageCards{
+.imageCards {
     border-radius: 15px 15px 0px 0px;
 }
 
@@ -43,7 +41,7 @@ body{
     transition: transform 0.3s ease-in-out;
 }
 
-.specifiedBrawler{
+.specifiedBrawler {
     width: 90%;
     transform: translate(0%, 40%);
 }
@@ -59,8 +57,8 @@ body{
     box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.3);
 }
 
-.imgDadosBrawler{
-    background-color: white; 
-    padding: 80px; 
+.imgDadosBrawler {
+    background-color: white;
+    padding: 80px;
     border: 10px solid black;
 }
