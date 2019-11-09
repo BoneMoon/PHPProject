@@ -62,4 +62,30 @@ class Autenticar extends Controller
             session_destroy();
         }
     }
+
+    public static function createUser()
+    {
+        $data = [
+            "id_utlizador" => $_POST["id_utilizador"],
+            "palavra_passe" => $_POST["palavra_passe"],
+            "nome" => $_POST["nome"],
+            "ativo" => $_POST["ativo"]
+        ];
+
+        $conn = new Db();
+        return $conn->execQuery('INSERT INTO utilizador 
+        (id_utilizador, plalavra_passe, nome, fotografia, ativo) 
+        VALUES(?, ?, ?, ?, ?)', ['sssss', [
+            $data["id_utilizador"],
+            $data["palavra_passe"], $data["nome"], $data["ativo"]
+        ]]);
+
+        header("Location: " . path("/"));
+        die();
+    }
+
+    public function criarUser()
+    {
+        $this->view("brawler/createUser");
+    }
 }
