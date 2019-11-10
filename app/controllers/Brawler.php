@@ -46,14 +46,15 @@ class Brawler extends Controller
 
   // public function creatBrawler($data){
   //   $Brawlers = $this->model('Brawlers');
-  
+
   //     $this->view('brawler/creatBrawler', ['brawler' => $data]);
   //   } else {
   //     $this->pageNotFound();
   //   }
   // }
 
-  public function createBrawler(){
+  public function createBrawler()
+  {
     $data = [
       "name" => $_POST["name"],
       "rarity" => $_POST["rarity"],
@@ -61,21 +62,33 @@ class Brawler extends Controller
       "role" => $_POST["role"],
       "speed" => $_POST["speed"],
       "health" => $_POST["health"]
-  ];
+    ];
 
 
     $conn = new Db();
     $res = $conn->execNonQuery('INSERT INTO brawlers
     (name, rarity, role, health, speed) 
-    VALUES (?, ?, ?, ?, ?)', ['sssss',[$data["name"], $data["rarity"], 
-    $data['role'], $data["health"], $data["speed"]]]);
+    VALUES (?, ?, ?, ?, ?)', ['sssss', [
+      $data["name"], $data["rarity"],
+      $data['role'], $data["health"], $data["speed"]
+    ]]);
 
     header("Location: " . path("/"));
     die();
   }
 
-  public function criarBrawler(){
+  public function criarBrawler()
+  {
     $this->view('brawler/creatBrawler');
+  }
+
+  public function deleteBrawler()
+  {
+    $conn = new Db();
+    $res = $conn->execQuery(('DELETE FROM brawlers WHERE id="?" '));
+
+    header("Location: " . path("/brawler"));
+    die();
   }
 }
 
