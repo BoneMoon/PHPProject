@@ -85,7 +85,9 @@ class Brawler extends Controller
   public function deleteBrawler()
   {
     $conn = new Db();
-    $res = $conn->execQuery(('DELETE FROM brawlers WHERE id="?" '));
+    $res = $conn->execNonQuery('DELETE FROM brawlers WHERE id="?" ');
+
+    if (!$res) { }
 
     header("Location: " . path("/brawler"));
     die();
