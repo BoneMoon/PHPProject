@@ -55,10 +55,13 @@ class Brawler extends Controller
 
   public function createBrawler()
   {
+    $imagem = $_FILES["image"]["name"];
+    $imagem_caminho = "assets/imgs/" . $imagem;
+    move_uploaded_file($_FILES["image"]["tmp_name"], $imagem_caminho);
     $data = [
       "name" => $_POST["name"],
       "rarity" => $_POST["rarity"],
-      // "image" => $_FILES["image"],
+      "image" => $imagem_caminho,
       "role" => $_POST["role"],
       "speed" => $_POST["speed"],
       "health" => $_POST["health"]
@@ -67,13 +70,13 @@ class Brawler extends Controller
 
     $conn = new Db();
     $res = $conn->execNonQuery('INSERT INTO brawlers
-    (name, rarity, role, health, speed) 
-    VALUES (?, ?, ?, ?, ?)', ['sssss', [
+    (name, rarity, image, role, health, speed) 
+    VALUES (?, ?, ?, ?, ?, ?)', ['ssssss', [
       $data["name"], $data["rarity"],
-      $data['role'], $data["health"], $data["speed"]
+      $data["image"], $data['role'], $data["health"], $data["speed"]
     ]]);
 
-    header("Location: " . path("/"));
+    header("Location: " . path("/brawler"));
     die();
   }
 
