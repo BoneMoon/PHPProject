@@ -11,23 +11,24 @@ class Autenticar extends Controller
         $this->view("session/login");
     }
 
-    public function loginPOST(){
+    public function loginPOST()
+    {
         $email = $_POST["id_utilizador"];
         $palavra_passe = $_POST["palavra_passe"];
 
-        if(empty($email) || empty($palavra_passe)){
+        if (empty($email) || empty($palavra_passe)) {
             header("Location: " . path("/autenticar/login"));
             die();
         }
 
         $data = Utilizador::findByEmail($email);
 
-        if($data=== null){
+        if ($data === null) {
             header("Location: " . path("/autenticar/login"));
             die();
         }
 
-        if($palavra_passe !== $data["palavra_passe"]){
+        if ($palavra_passe !== $data["palavra_passe"]) {
             header("Location: " . path("/autenticar/login"));
             die();
         }
