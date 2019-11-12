@@ -40,10 +40,11 @@ class Autenticar extends Controller
 
     public function logout()
     {
-        if (!empty($_POST['logout'])) {
-
-            session_unset();
-            session_destroy();
+        if (empty($_POST['logout'])) {
+            if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])){
+                session_unset();
+                session_destroy();
+            }
         }
         header("Location: " . path("/"));
     }

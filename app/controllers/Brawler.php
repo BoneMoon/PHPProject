@@ -1,7 +1,5 @@
 <?php
-
 use app\core\Controller;
-
 class Brawler extends Controller
 {
   /**
@@ -20,7 +18,6 @@ class Brawler extends Controller
     */
     $this->view('brawler/index', ['brawlers' => $data]);
   }
-
   /**
    * Invocação da view get.php
    *
@@ -31,18 +28,14 @@ class Brawler extends Controller
     if (is_numeric($id)) {
       $Brawlers = $this->model('Brawlers');
       $data = $Brawlers::findById($id);
-
       if ($data === null) {
-
         return $this->pageNotFound();
       }
-
       $this->view('brawler/get', ['brawler' => $data]);
     } else {
       $this->pageNotFound();
     }
   }
 }
-
 // :: Scope Resolution Operator
 // Utilizado para acesso às propriedades e métodos das classes
