@@ -14,9 +14,16 @@
                 <button class="btn my-2 my-sm-0" id="NavButton" type="submit">Pesquisar</button>
             </form>
             <ul class="navbar-nav ml-auto">
+                
+            <?php if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) : ?>
+                <li class="nav-item">
+                    <a href="<?= path("/autenticar/logout") ?>" id="NavButton" class="nav-link m-2">logout</a>
+                </li>
+            <?php else : ?>
                 <li class="nav-item">
                     <a href="<?= path("/autenticar/login") ?>" id="NavButton" class="nav-link m-2">login</a>
                 </li>
+            <?php endif; ?>
             </ul>
         </div>
     </div>

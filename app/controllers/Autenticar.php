@@ -45,6 +45,7 @@ class Autenticar extends Controller
             session_unset();
             session_destroy();
         }
+        header("Location: " . path("/"));
     }
 
     public static function createUser()
