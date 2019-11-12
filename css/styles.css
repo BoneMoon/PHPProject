@@ -69,3 +69,7 @@ body {
 .inputBrawler{
     width: 300px;
 }
+
+.borderForms{
+    border: 2px solid black;
+}
