@@ -55,6 +55,8 @@ class Brawler extends Controller
 
   public function createBrawler()
   {
+    $Brawlers = $this->model('Brawlers');
+
     $imagem = $_FILES["image"]["name"];
     $imagem_caminho = "assets/imgs/" . $imagem;
     move_uploaded_file($_FILES["image"]["tmp_name"], $imagem_caminho);
@@ -67,14 +69,12 @@ class Brawler extends Controller
       "health" => $_POST["health"]
     ];
 
+    $res = $Brawlers->createBrawler($data);
 
-    $conn = new Db();
-    $res = $conn->execNonQuery('INSERT INTO brawlers
-    (name, rarity, image, role, health, speed) 
-    VALUES (?, ?, ?, ?, ?, ?)', ['ssssss', [
-      $data["name"], $data["rarity"],
-      $data["image"], $data['role'], $data["health"], $data["speed"]
-    ]]);
+    if (!$res) {
+      header("Location: " . path("/brawler/criarBrawler"));
+      die();
+    }
 
     header("Location: " . path("/brawler"));
     die();
@@ -87,13 +87,14 @@ class Brawler extends Controller
 
   public function deleteBrawler()
   {
-    $conn = new Db();
-    $res = $conn->execNonQuery('DELETE FROM brawlers WHERE id=" ?" ');
+    $id = $_POST["id"];
+    $Brawlers = $this->model('Brawlers');
+    $res = $Brawlers->RemoveBrawler($id);
 
-    var_dump($res);
-    die();
-    
-    if (!$res) { };
+    if (!$res) {
+      header("Location: " . path("/brawler/get"));
+      die();
+    };
 
     header("Location: " . path("/brawler"));
     die();

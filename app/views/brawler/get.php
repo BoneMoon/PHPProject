@@ -14,12 +14,12 @@
   <?php require __DIR__ . "/../partial/navBar.php" ?>
   <div class="container">
     <div class="row specifiedBrawler">
-        <section style="background-color:white; border-radius: 10px;">
+      <section style="background-color:white; border-radius: 10px;">
         <div class="col-md-8">
-        <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="" alt="brawler image" style="background-color: white; padding: 80px; border-radius: 10px">
+          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="" alt="brawler image" style="background-color: white; padding: 80px; border-radius: 10px">
         </div>
         <div class="col-md-4">
-        <div style="text-align: center;">
+          <div style="text-align: center;">
             <h1 class="card-title mb-5"> <?= $brawler["name"] ?> </h1>
           </div>
           <div class="text-justify mt-5" style="padding-left: 30%">
@@ -28,15 +28,17 @@
             <h3 class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </h3>
             <h3 class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </h3>
           </div>
-          </div>
-          </section>
-          </div>
+        </div>
+      </section>
     </div>
-    <form method="POST" action="<?= path("/brawler/deleteBrawler") ?>">
-      <div class="row pt-5">
-        <input type="submit" class="btn btn-primary" value="Eliminar Brawler">
-      </div>
-    </form>
+  </div>
+  <form method="POST" action="<?= path("/brawler/deleteBrawler") ?>">
+    <div class="row pt-5">
+      <input type="hidden" name="id" value="<?= $brawler['id'] ?>">
+      <button type="submit" class="btn btn-primary"> Eliminar Brawler</button>
+      <!-- values = "$brawlers['id']" -->
+    </div>
+  </form>
   </div>
   <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>

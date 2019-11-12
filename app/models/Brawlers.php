@@ -35,4 +35,22 @@ class Brawlers
       return $response[0];
     }
   }
+
+  public static function createBrawler($data)
+  {
+    $conn = new Db();
+    return $res = $conn->execNonQuery('INSERT INTO brawlers
+    (name, rarity, image, role, health, speed) 
+    VALUES (?, ?, ?, ?, ?, ?)', ['ssssss', [
+      $data["name"], $data["rarity"],
+      $data["image"], $data['role'], $data["health"], $data["speed"]
+    ]]);
+  }
+
+  public static function RemoveBrawler($id)
+  {
+    $conn = new Db();
+    $querry = 'DELETE FROM brawlers WHERE id = ?';
+    return $conn->execNonQuery($querry, ["i", [$id]]);
+  }
 }
