@@ -53,4 +53,15 @@ class Brawlers
     $querry = 'DELETE FROM brawlers WHERE id = ?';
     return $conn->execNonQuery($querry, ["i", [$id]]);
   }
+
+  public static function updateBrawler($data, $id)
+  {
+    $conn = new Db();
+    $query = 'UPDATE brawlers SET name= ?, rarity= ?, image= ?, 
+    role= ?, health= ?, speed= ? ';
+    return $conn->execNonQuery($query, ['ssssss', [
+      $data["name"], $data["rarity"],
+      $data["image"], $data["role"], $data["health"], $data["speed"]
+    ]], ["i", ["id"]]);
+  }
 }

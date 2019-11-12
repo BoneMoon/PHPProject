@@ -99,6 +99,32 @@ class Brawler extends Controller
     header("Location: " . path("/brawler"));
     die();
   }
+
+  public function atualizarBrawler()
+  {
+    $imagem = $_FILES["image"]["name"];
+    $imagem_caminho = "assets/imgs/" . $imagem;
+    move_uploaded_file($_FILES["image"]["tmp_name"], $imagem_caminho);
+
+    $data = [
+      "name" => $_POST["name"],
+      "rarity" => $_POST["rarity"],
+      "image" => $imagem_caminho,
+      "role" => $_POST["role"],
+      "speed" => $_POST["speed"],
+      "health" => $_POST["health"]
+    ];
+
+    $Brawlers = $this->model('Brawlers');
+    $res = $Brawlers->updateBrawler($data);
+
+    header("Location: " . path("/brawler"));
+    die();
+  }
+  public function atualBrawler()
+  {
+    $this->view('brawler/editBrawler');
+  }
 }
 
 
