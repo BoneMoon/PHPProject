@@ -1,6 +1,7 @@
 <?php
 
 use app\core\Controller;
+use app\core\Db;
 
 class Autenticar extends Controller
 {
@@ -66,26 +67,26 @@ class Autenticar extends Controller
     public static function createUser()
     {
         $data = [
-            "id_utlizador" => $_POST["id_utilizador"],
+            "id_utilizador" => $_POST["id_utilizador"],
             "palavra_passe" => $_POST["palavra_passe"],
             "nome" => $_POST["nome"],
-            "ativo" => $_POST["ativo"]
+            "ativo" => true
         ];
 
         $conn = new Db();
         $res = $conn->execNonQuery('INSERT INTO utilizador 
-        (id_utilizador, plalavra_passe, nome, ativo) 
-        VALUES(?, ?, ?, ?)', ['ssss', [
+        (id_utilizador, palavra_passe, nome, ativo) 
+        VALUES (?, ?, ?, ?)', ['sssb', [
             $data["id_utilizador"],
             $data["palavra_passe"], $data["nome"], $data["ativo"]
         ]]);
 
-        header("Location: " . path("/app/views/session/login.php"));
+        header("Location: " . path("/session/login.php"));
         die();
     }
 
     public function criarUser()
     {
-        $this->view("brawler/createUser");
+        $this->view("session/createUser");
     }
 }
