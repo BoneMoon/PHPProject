@@ -1,3 +1,4 @@
+<!-- é aqui que tens de pôr a cena dos botões -->
 <nav class="navbar PersonalizaNavBar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="<?= path("/") ?>">
@@ -17,7 +18,6 @@
                     <a href="<?= path("/autenticar/login") ?>" id="NavButton" class="nav-link m-2">login</a>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
