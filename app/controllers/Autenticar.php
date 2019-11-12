@@ -73,7 +73,7 @@ class Autenticar extends Controller
         ];
 
         $conn = new Db();
-        return $conn->execNonQuery('INSERT INTO utilizador 
+        $res = $conn->execNonQuery('INSERT INTO utilizador 
         (id_utilizador, plalavra_passe, nome, ativo) 
         VALUES(?, ?, ?, ?)', ['ssss', [
             $data["id_utilizador"],
