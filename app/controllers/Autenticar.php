@@ -74,13 +74,13 @@ class Autenticar extends Controller
 
         $conn = new Db();
         return $conn->execQuery('INSERT INTO utilizador 
-        (id_utilizador, plalavra_passe, nome, fotografia, ativo) 
-        VALUES(?, ?, ?, ?, ?)', ['sssss', [
+        (id_utilizador, plalavra_passe, nome, ativo) 
+        VALUES(?, ?, ?, ?)', ['ssss', [
             $data["id_utilizador"],
             $data["palavra_passe"], $data["nome"], $data["ativo"]
         ]]);
 
-        header("Location: " . path("/"));
+        header("Location: " . path("brawler/login.php"));
         die();
     }
 
