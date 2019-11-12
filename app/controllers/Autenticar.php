@@ -7,7 +7,7 @@ class Autenticar extends Controller
     public function login()
     {
         if (!empty($_SESSION['id_utilizador'])) {
-            header('Location:path("/app/views/home/index.php)');
+            header(' Location:' . path("/"));
         }
 
         require_once("connection_params.php");
@@ -47,7 +47,7 @@ class Autenticar extends Controller
                 $_SESSION['id_utilizador']  = $id_utilizador;
                 $_SESSION['nome']           = $nome;
 
-                header('Location:path("/app/views/home/index.php")');
+                header('Location: ' . path("/"));
             } else {
                 $mensagem = 'Credenciais de acesso inválidas.';
             }
@@ -73,14 +73,14 @@ class Autenticar extends Controller
         ];
 
         $conn = new Db();
-        return $conn->execQuery('INSERT INTO utilizador 
+        return $conn->execNonQuery('INSERT INTO utilizador 
         (id_utilizador, plalavra_passe, nome, ativo) 
         VALUES(?, ?, ?, ?)', ['ssss', [
             $data["id_utilizador"],
             $data["palavra_passe"], $data["nome"], $data["ativo"]
         ]]);
 
-        header("Location: " . path("brawler/login.php"));
+        header("Location: " . path("/app/views/session/login.php"));
         die();
     }
 
