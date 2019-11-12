@@ -14,10 +14,7 @@
             </form>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="<?= path("/app/views/session/login.php") ?>" id="NavButton" class="nav-link m-2">login</a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= path("/app/views/session/logout.php") ?>" id="NavButton" class="nav-link m-2">logout</a>
+                    <a href="<?= path("/autenticar/login") ?>" id="NavButton" class="nav-link m-2">login</a>
                 </li>
             </ul>
 

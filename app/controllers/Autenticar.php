@@ -2,57 +2,39 @@
 
 use app\core\Controller;
 use app\core\Db;
+use app\models\Utilizador;
 
 class Autenticar extends Controller
 {
     public function login()
     {
-        if (!empty($_SESSION['id_utilizador'])) {
-            header(' Location:' . path("/"));
+        $this->view("session/login");
+    }
+
+    public function loginPOST(){
+        $email = $_POST["id_utilizador"];
+        $palavra_passe = $_POST["palavra_passe"];
+
+        if(empty($email) || empty($palavra_passe)){
+            header("Location: " . path("/autenticar/login"));
+            die();
         }
 
-        require_once("connection_params.php");
-        $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
-        $conn->set_charset("utf8");
-        if ($conn->connect_error) {
-            trigger_error('A ligação à Base de Dados falhou: '  . $conn->connect_error, E_USER_ERROR);
+        $data = Utilizador::findByEmail($email);
+
+        if($data=== null){
+            header("Location: " . path("/autenticar/login"));
+            die();
         }
 
-        $mensagem = "";
-
-        // se(foi feito login)
-        // NOTA PHP: a função empty verifica se determinada variável não está definida OU está vazia
-        if (!empty($_POST['login'])) {
-
-            // neste ponto a variável global $_POST["login"] está definida e tem valor
-            // ir à base de dados extrair o utilizador ativo, com as credenciais introduzidas no formulário
-            $sql = 'SELECT id_utilizador, nome FROM utilizador where ativo = 1 AND id_utilizador = ? AND palavra_passe = ?';
-
-            $stmt = $conn->prepare($sql);
-            if ($stmt === false) {
-                trigger_error('Problema com o SQL: ' . $sql . ' Erro: ' . $conn->error, E_USER_ERROR);
-            }
-
-            $stmt->bind_param('ss', $_POST['utilizador'], $_POST['palavra_passe']);
-
-            /* Executar statement */
-            $stmt->execute();
-
-            $stmt->store_result();
-            $numero_registos = $stmt->num_rows;
-
-            $stmt->bind_result($id_utilizador, $nome);
-
-            if ($stmt->fetch()) {
-
-                $_SESSION['id_utilizador']  = $id_utilizador;
-                $_SESSION['nome']           = $nome;
-
-                header('Location: ' . path("/"));
-            } else {
-                $mensagem = 'Credenciais de acesso inválidas.';
-            }
+        if($palavra_passe !== $data["palavra_passe"]){
+            header("Location: " . path("/autenticar/login"));
+            die();
         }
+
+        $_SESSION["userId"] = $data["id_utilizador"];
+        header("Location: " . path("/"));
+        die();
     }
 
     public function logout()
@@ -81,7 +63,7 @@ class Autenticar extends Controller
             $data["palavra_passe"], $data["nome"], $data["ativo"]
         ]]);
 
-        header("Location: " . path("/session/login.php"));
+        header("Location: " . path("/autenticar/login"));
         die();
     }
 

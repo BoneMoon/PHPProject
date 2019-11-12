@@ -29,9 +29,9 @@
         <div style="padding-top: 40px;">
 
             <?php
-            if (empty($_SESSION['id_utilizador'])) {
+            if (empty($_SESSION['userId'])) {
                 ?>
-                <form action="login.php" method="post" id="frmLogin">
+                <form action="<?= path("/autenticar/loginPOST") ?>" method="post" id="frmLogin">
 
                     <?php
                         if (!empty($mensagem)) {
@@ -42,8 +42,8 @@
                         ?>
 
                     <div>
-                        <div>Utilizador</div>
-                        <div><input id="utilizador" name="utilizador" type="text"></div>
+                        <div>Email:</div>
+                        <div><input id="id_utilizador" name="id_utilizador" type="text"></div>
                     </div>
                     <div>
                         <div>Palavra-passe</div>
@@ -69,7 +69,6 @@
         </div>
         <div style="padding-top: 40px;">
             <a href="http://localhost/brawlstars/">Voltar</a>
-
         </div>
     </div>
 </body>
