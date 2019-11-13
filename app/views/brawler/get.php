@@ -12,25 +12,13 @@
 
 <body>
   <?php require __DIR__ . "/../partial/navBar.php" ?>
-
-  <!-- <div class="card cardLayout" style="width: 18rem;">
-    <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="card-img-top" alt="brawler image">
-    <div class="card-body">
-      <h5 class="card-title"> <?= $brawler["name"] ?> </h5>
-      <p class="card-text"> <?= 'Rarity: ' . $brawler["rarity"] ?> </p>
-      <p class="card-text"> <?= 'Role: ' . $brawler["role"]  ?> </p>
-      <p class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </p>
-      <p class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </p>
-    </div>
-  </div> -->
-
   <div class="container">
     <div class="row specifiedBrawler">
-      <div class="col-md-6">
-        <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="" alt="brawler image" style="background-color: white; padding: 80px; border-radius: 10px">
-      </div>
-      <div class="col-md-6">
-        <section style="background-color:white; height: 100%; width: 100%; border-radius: 10px;">
+      <section style="background-color:white; border-radius: 10px;">
+        <div class="col-md-8">
+          <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="" alt="brawler image" style="background-color: white; padding: 80px; border-radius: 10px">
+        </div>
+        <div class="col-md-4">
           <div style="text-align: center;">
             <h1 class="card-title mb-5"> <?= $brawler["name"] ?> </h1>
           </div>
@@ -40,10 +28,17 @@
             <h3 class="card-text"> <?= 'Health: ' . $brawler["health"]  ?> </h3>
             <h3 class="card-text"> <?= 'Speed: ' . $brawler["speed"]  ?> </h3>
           </div>
-        </section>
-
-      </div>
+        </div>
+      </section>
     </div>
+  </div>
+  <form method="POST" action="<?= path("/brawler/deleteBrawler") ?>">
+    <div class="row pt-5">
+      <input type="hidden" name="id" value="<?= $brawler['id'] ?>">
+      <button type="submit" class="btn btn-primary"> Eliminar Brawler</button>
+      <!-- values = "$brawlers['id']" -->
+    </div>
+  </form>
   </div>
   <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>
