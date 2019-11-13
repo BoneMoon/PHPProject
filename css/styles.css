@@ -62,3 +62,7 @@ body {
     padding: 80px;
     border: 10px solid black;
 }
+
+.bBorder{
+    border: 2px solid black;
+}

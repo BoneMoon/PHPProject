@@ -19,6 +19,7 @@
             padding: 20px;
         }
     </style>
+    <?php require __DIR__ . "/../partial/style.php" ?>
 </head>
 
 <body>
@@ -71,6 +72,8 @@
             <a href="http://localhost/brawlstars/">Voltar</a>
         </div>
     </div>
+
+    <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>
 
 </html>

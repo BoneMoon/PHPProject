@@ -15,27 +15,28 @@
     <section class="container pt-5" style="color: white; text-align: center">
         <h1>Criar Conta</h1>
     </section>
-
+    <div class="container">
+        <section class="mx-auto" style="width: 60%">
     <form method="POST" action="<?= path("/autenticar/createUser") ?>">
         <div class="form-group">
             <label for="exampleFormControlInput1">Nome:</label>
-            <input type="name" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Utilizador">
+            <input type="name" name="nome" class="form-control bBorder" id="exampleFormControlInput1" placeholder="Nome do Utilizador">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">E-mail:</label>
-            <input type="email" name="id_utilizador" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+            <input type="email" name="id_utilizador" class="form-control bBorder" id="exampleFormControlInput1" placeholder="Email">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Palavra-passe:</label>
-            <input type="password" name="palavra_passe" class="form-control" id="exampleFormControlInput1" placeholder="Palavra-Passe">
+            <input type="password" name="palavra_passe" class="form-control bBorder" id="exampleFormControlInput1" placeholder="Palavra-Passe">
         </div>
-        <div class="row pt-5">
+        <div class="row pt-5 mx-auto">
             <input type="submit" class="btn btn-primary" value="Criar Conta">
         </div>
-
-
     </form>
-
+    <input type="submit" class="btn btn-primary" value="Voltar">
+    </section>
+    </div>
 
     <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>
