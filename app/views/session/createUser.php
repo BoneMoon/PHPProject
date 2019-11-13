@@ -34,7 +34,10 @@
             <input type="submit" class="btn btn-primary" value="Criar Conta">
         </div>
     </form>
-    <input type="submit" class="btn btn-primary" value="Voltar">
+    <div class="pt-5">
+        <input type="hidden" value="<?= path("/autenticar/login")?>">
+        <button class="btn btn-primary">Voltar</button>
+    </div>
     </section>
     </div>
 
