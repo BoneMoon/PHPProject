@@ -9,18 +9,14 @@
         </button>
 
         <div class="collapse navbar-collapse" id="nav-top">
-            <form class="form-inline mx-auto my-2 my-lg-0">
-                <input class="form-control mr-sm-2" id="CampoPesquiza" type="search" placeholder="Procurar Brawller" aria-label="Search">
-                <button class="btn my-2 my-sm-0" id="NavButton" type="submit">Pesquisar</button>
-            </form>
             <ul class="navbar-nav ml-auto">
                 
             <?php if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) : ?>
-                <li class="nav-item">
+                <li class="nav-item buttonsSameWidth">
                     <a href="<?= path("/autenticar/logout") ?>" id="NavButton" class="nav-link m-2">logout</a>
                 </li>
             <?php else : ?>
-                <li class="nav-item">
+                <li class="nav-item buttonsSameWidth">
                     <a href="<?= path("/autenticar/login") ?>" id="NavButton" class="nav-link m-2">login</a>
                 </li>
             <?php endif; ?>

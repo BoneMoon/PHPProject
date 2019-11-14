@@ -15,7 +15,7 @@
     <section class="container pt-5" style="color: white; text-align: center">
         <h1>Criar Conta</h1>
     </section>
-    <div class="container">
+    <div class="container" style="color: white;">
         <section class="mx-auto" style="width: 60%">
     <form method="POST" action="<?= path("/autenticar/createUser") ?>">
         <div class="form-group">
@@ -30,14 +30,14 @@
             <label for="exampleFormControlInput1">Palavra-passe:</label>
             <input type="password" name="palavra_passe" class="form-control bBorder" id="exampleFormControlInput1" placeholder="Palavra-Passe">
         </div>
-        <div class="row pt-5 mx-auto">
-            <input type="submit" class="btn btn-primary" value="Criar Conta">
+        <div class="row pt-5 mx-auto" style="float: right">
+            <input type="submit" class="btn btn-success buttonsSameWidth" value="Criar Conta" >
         </div>
-    </form>
-    <div class="pt-5">
-        <input type="hidden" value="<?= path("/autenticar/login")?>">
-        <button class="btn btn-primary">Voltar</button>
+        <div class="pt-5">
+      <button type="submit" class="btn btn-primary buttonsSameWidth"><a href="<?= path("/autenticar/login") ?>"></a> voltar</button>
     </div>
+    </form>
+
     </section>
     </div>
 

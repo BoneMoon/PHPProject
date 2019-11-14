@@ -66,3 +66,7 @@ body {
 .bBorder{
     border: 2px solid black;
 }
+
+.buttonsSameWidth{
+    width: 150px;
+}
