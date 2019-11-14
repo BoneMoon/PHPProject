@@ -36,9 +36,9 @@
     <div class="row pt-5">
       <input type="hidden" name="id" value="<?= $brawler['id'] ?>">
       <button type="submit" class="btn btn-primary"> Eliminar Brawler</button>
-      <!-- values = "$brawlers['id']" -->
     </div>
   </form>
+  <a href="<?= path("/brawler/atualBrawler/{$brawler['id']}") ?>">Editar Brawler</a>
   </div>
   <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>

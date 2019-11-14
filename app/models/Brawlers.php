@@ -58,10 +58,10 @@ class Brawlers
   {
     $conn = new Db();
     $query = 'UPDATE brawlers SET name= ?, rarity= ?, image= ?, 
-    role= ?, health= ?, speed= ? ';
-    return $conn->execNonQuery($query, ['ssssss', [
+    role= ?, health= ?, speed= ? WHERE id= ? ';
+    return $conn->execNonQuery($query, ['ssssssi', [
       $data["name"], $data["rarity"],
-      $data["image"], $data["role"], $data["health"], $data["speed"]
-    ]], ["i", ["id"]]);
+      $data["image"], $data["role"], $data["health"], $data["speed"], $id
+    ]]);
   }
 }
