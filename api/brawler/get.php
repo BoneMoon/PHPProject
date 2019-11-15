@@ -9,16 +9,18 @@ if ($_SERVER['REQUEST_METHOD'] != 'GET') {
   exit('405 Method Not Allowed');
 }
 
-require_once('../../core/Db.php');
-require_once('../../models/Brawlers.php');
+require_once('../../app/core/Db.php');
+require_once('../../app/models/Brawlers.php');
 
-$brawler = new Brawler();
+use app\models\Brawlers;
+
+$brawler = new Brawlers();
 
 if (!isset($_GET['id'])) {
-  $data = $brawler->get();
+  $data = $brawler->findAll();
 } else {
   if (is_numeric($_GET['id'])) {
-    $data = $brawler->getById($_GET['id']);
+    $data = $brawler->findById($_GET['id']);
   } else {
     $data = array();
   }
@@ -29,22 +31,20 @@ $info = array();
 
 if ($idrecords > 0) {
   $info['brawler'] = array();
-  foreach ($data as $brawler) {
-    
-    extract($brawler);
+  
+    extract($data);
 
     $item = array(
-      "name" => "name",
-      "rarity" => "rarity",
-      "image" => $imagem_caminho,
-      "role" => "role",
-      "speed" => "speed",
-      "health" => "health"
+      "id" => $id,
+      "name" => $name,
+      "rarity" => $rarity,
+      "image" => $image,
+      "role" => $role,
+      "speed" => $speed,
+      "health" => $health
     );
-
+    
     array_push($info['brawler'], $item);
-
-  }
 
 } else {
   $info = array('message' => '0 brawlers encontrados...');   
