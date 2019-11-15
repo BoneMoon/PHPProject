@@ -16,16 +16,16 @@
         <div class="row mx-auto pt-4">
             <h3 style="color: white;">Insira os dados para atualizar o Brawler</h3>
         </div>
-        <form method="POST" enctype="multipart/form-data" action="<?= path("/brawler/updateBrawler") ?>">
+        <form method="POST" enctype="multipart/form-data" action="<?= path("/brawler/atualizarBrawler/{$brawler['id']}") ?>">
             <div class="row">
                 <div class="col-md-8 pt-5">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome:</label>
-                        <input type="name" value="<?= $data["nome"] ?>" name="name" class="form-control borderForms" id="exampleFormControlInput1" placeholder="Nome do Brawler">
+                        <input type="name" value="<?= $brawler["name"] ?>" name="name" class="form-control borderForms" id="exampleFormControlInput1" placeholder="Nome do Brawler">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Raridade</label>
-                        <select class="form-control borderForms" value="<?= $data["rarity"] ?>" id="exampleFormControlSelect1" name="rarity">
+                        <select class="form-control borderForms" value="<?= $brawler["rarity"] ?>" id="exampleFormControlSelect1" name="rarity">
                             <option>common</option>
                             <option>rare</option>
                             <option>super rare</option>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Tipo</label>
-                        <select class="form-control borderForms" value="<?= $data["role"] ?>" id="exampleFormControlSelect1" name="role">
+                        <select class="form-control borderForms" value="<?= $brawler["role"] ?>" id="exampleFormControlSelect1" name="role">
                             <option>fighter</option>
                             <option>healer</option>
                             <option>sharpshooper</option>
@@ -49,11 +49,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Vida:</label>
-                        <input type="name" value="<?= $data["health"] ?>" name="health" class="form-control borderForms" id="exampleFormControlInput1" placeholder="Nome do Brawler">
+                        <input type="name" value="<?= $brawler["health"] ?>" name="health" class="form-control borderForms" id="exampleFormControlInput1" placeholder="Nome do Brawler">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Velocidade:</label>
-                        <input type="name" name="speed" value="<?= $data["speed"] ?>" class="form-control borderForms" id="exampleFormControlInput1" placeholder="Nome do Brawler">
+                        <input type="name" name="speed" value="<?= $brawler["speed"] ?>" class="form-control borderForms" id="exampleFormControlInput1" placeholder="Nome do Brawler">
                     </div>
                 </div>
                 <div class="col-md-4 pt-5">
