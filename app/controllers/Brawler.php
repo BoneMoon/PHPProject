@@ -82,7 +82,7 @@ class Brawler extends Controller
     header("Location: " . path("/brawler"));
     die();
   }
-  public function atualizarBrawler()
+  public function atualizarBrawler($id)
   {
     $imagem = $_FILES["image"]["name"];
     $imagem_caminho = "assets/imgs/" . $imagem;
@@ -96,13 +96,22 @@ class Brawler extends Controller
       "health" => $_POST["health"]
     ];
     $Brawlers = $this->model('Brawlers');
-    $res = $Brawlers->updateBrawler($data);
+    $res = $Brawlers->updateBrawler($data, $id);
     header("Location: " . path("/brawler"));
     die();
   }
-  public function atualBrawler()
+  public function atualBrawler($id = null)
   {
-    $this->view('brawler/editBrawler');
+    if (is_numeric($id)) {
+      $Brawlers = $this->model('Brawlers');
+      $data = $Brawlers::findById($id);
+      if ($data === null) {
+        return $this->pageNotFound();
+      }
+      $this->view('brawler/editBrawler', ['brawler' => $data]);
+    } else {
+      $this->pageNotFound();
+    }
   }
 }
 // :: Scope Resolution Operator

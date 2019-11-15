@@ -1,118 +1,59 @@
 <?php
-use app\core\Controller;
+namespace app\models;
 use app\core\Db;
-class Brawler extends Controller
+class Brawlers
 {
   /**
-   * Invocação da view index.php
+   * Método para obtenção do dataset de todos os brawlers
+   *
+   * @return   array
    */
-  public function index()
+  public static function findAll()
   {
-    $Brawlers = $this->model('Brawlers'); // é retornado o model Brawlers()
-    $data = $Brawlers::findAll();
-    /*
-    $objBrawlers = new Brawlers();
-    $data = $objBrawlers->findAll();
-    ------------------------------------------------------
-    $varBrawlers = "Brawlers";
-    $data = $varBrawlers::findAll();
-    */
-    $this->view('brawler/index', ['brawlers' => $data]);
+    $conn = new Db();
+    $response = $conn->execQuery('SELECT * FROM brawlers');
+    return $response;
   }
   /**
-   * Invocação da view get.php
+   * Método para a obtenção de um brawler pelo id correspondente
+   * @param    int     $id   Id. do brawler
    *
-   * @param  int   $id   Id. do brawler
+   * @return   array
    */
-  public function get($id = null)
+  public static function findById(int $id)
   {
-    if (is_numeric($id)) {
-      $Brawlers = $this->model('Brawlers');
-      $data = $Brawlers::findById($id);
-      if ($data === null) {
-        return $this->pageNotFound();
-      }
-      $this->view('brawler/get', ['brawler' => $data]);
+    $conn = new Db();
+    $response = $conn->execQuery('SELECT * FROM brawlers WHERE id = ?', array('i', array($id)));
+    if (count($response) <= 0) {
+      return null;
     } else {
-      $this->pageNotFound();
+      return $response[0];
     }
   }
-  // public function creatBrawler($data){
-  //   $Brawlers = $this->model('Brawlers');
-  //     $this->view('brawler/creatBrawler', ['brawler' => $data]);
-  //   } else {
-  //     $this->pageNotFound();
-  //   }
-  // }
-  public function createBrawler()
+  public static function createBrawler($data)
   {
-    $Brawlers = $this->model('Brawlers');
-    $imagem = $_FILES["image"]["name"];
-    $imagem_caminho = "assets/imgs/" . $imagem;
-    move_uploaded_file($_FILES["image"]["tmp_name"], $imagem_caminho);
-    $data = [
-      "name" => $_POST["name"],
-      "rarity" => $_POST["rarity"],
-      "image" => $imagem_caminho,
-      "role" => $_POST["role"],
-      "speed" => $_POST["speed"],
-      "health" => $_POST["health"]
-    ];
-    $res = $Brawlers->createBrawler($data);
-    if (!$res) {
-      header("Location: " . path("/brawler/criarBrawler"));
-      die();
-    }
-    header("Location: " . path("/brawler"));
-    die();
+    $conn = new Db();
+    return $res = $conn->execNonQuery('INSERT INTO brawlers
+    (name, rarity, image, role, health, speed) 
+    VALUES (?, ?, ?, ?, ?, ?)', ['ssssss', [
+      $data["name"], $data["rarity"],
+      $data["image"], $data['role'], $data["health"], $data["speed"]
+    ]]);
   }
-  public function criarBrawler()
+  public static function RemoveBrawler($id)
   {
-    $this->view('brawler/creatBrawler');
+    $conn = new Db();
+    $querry = 'DELETE FROM brawlers WHERE id = ?';
+    return $conn->execNonQuery($querry, ["i", [$id]]);
   }
-  public function deleteBrawler()
+  public static function updateBrawler($data, $id)
   {
-    $id = $_POST["id"];
-    $Brawlers = $this->model('Brawlers');
-    $res = $Brawlers->RemoveBrawler($id);
-    if (!$res) {
-      header("Location: " . path("/brawler/get"));
-      die();
-    };
-    header("Location: " . path("/brawler"));
-    die();
-  }
-  public function atualizarBrawler($id)
-  {
-    $imagem = $_FILES["image"]["name"];
-    $imagem_caminho = "assets/imgs/" . $imagem;
-    move_uploaded_file($_FILES["image"]["tmp_name"], $imagem_caminho);
-    $data = [
-      "name" => $_POST["name"],
-      "rarity" => $_POST["rarity"],
-      "image" => $imagem_caminho,
-      "role" => $_POST["role"],
-      "speed" => $_POST["speed"],
-      "health" => $_POST["health"]
-    ];
-    $Brawlers = $this->model('Brawlers');
-    $res = $Brawlers->updateBrawler($data, $id);
-    header("Location: " . path("/brawler"));
-    die();
-  }
-  public function atualBrawler($id = null)
-  {
-    if (is_numeric($id)) {
-      $Brawlers = $this->model('Brawlers');
-      $data = $Brawlers::findById($id);
-      if ($data === null) {
-        return $this->pageNotFound();
-      }
-      $this->view('brawler/editBrawler', ['brawler' => $data]);
-    } else {
-      $this->pageNotFound();
-    }
+    $conn = new Db();
+    $query = 'UPDATE brawlers SET name= ?, rarity= ?, image= ?, 
+    role= ?, health= ?, speed= ? WHERE id= ? ';
+    return $conn->execNonQuery($query, ['ssssssi', [
+      $data["name"], $data["rarity"],
+      $data["image"], $data["role"], $data["health"], $data["speed"], $id
+    ]]);
   }
 }
-// :: Scope Resolution Operator
-// Utilizado para acesso às propriedades e métodos das classes
