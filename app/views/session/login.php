@@ -41,7 +41,7 @@
                 <input type="submit" class="btn btn-success buttonsSameWidth" value="login">
             </div>
             <div class="pt-5">
-                <button type="submit" class="btn btn-primary buttonsSameWidth"><a href="<?= path("/") ?>"></a>voltar</button>
+                <button class="btn btn-primary buttonsSameWidth"><a href="<?= path("/") ?>">Voltar</a></button>
             </div>
             </section>
         </div>

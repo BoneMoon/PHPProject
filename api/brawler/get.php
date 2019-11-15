@@ -26,29 +26,13 @@ if (!isset($_GET['id'])) {
   }
 }
 
-$idrecords = count($data);
-$info = array();
 
-if ($idrecords > 0) {
-  $info['brawler'] = array();
-  
-    extract($data);
-
-    $item = array(
-      "id" => $id,
-      "name" => $name,
-      "rarity" => $rarity,
-      "image" => $image,
-      "role" => $role,
-      "speed" => $speed,
-      "health" => $health
-    );
-    
-    array_push($info['brawler'], $item);
+if ($data !== null) {
+  echo json_encode($data);
 
 } else {
-  $info = array('message' => '0 brawlers encontrados...');   
+  echo json_encode(array('message' => '0 brawlers encontrados...'));
 }
 
-echo json_encode($info);
+
 ?>

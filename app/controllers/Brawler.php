@@ -47,7 +47,12 @@ class Brawler extends Controller
   public function createBrawler()
   {
     $Brawlers = $this->model('Brawlers');
+    
     $imagem = $_FILES["image"]["name"];
+    if($imagem == null){
+      header("Location: " . path("/brawler/criarBrawler"));
+      die();
+    }
     $imagem_caminho = "assets/imgs/" . $imagem;
     move_uploaded_file($_FILES["image"]["tmp_name"], $imagem_caminho);
     $data = [
@@ -63,6 +68,12 @@ class Brawler extends Controller
       header("Location: " . path("/brawler/criarBrawler"));
       die();
     }
+
+    if($data["name"] == null || $data["speed"] == null || $data["health"] == null){
+      header("Location: " . path("/brawler/criarBrawler"));
+      die();
+    }
+
     header("Location: " . path("/brawler"));
     die();
   }
@@ -97,6 +108,17 @@ class Brawler extends Controller
     ];
     $Brawlers = $this->model('Brawlers');
     $res = $Brawlers->updateBrawler($data, $id);
+    
+    if (!$res) {
+      header("Location: " . path("/brawler/atualBrawler/$id"));
+      die();
+    }
+
+    if($data["name"] == null || $data["speed"] == null || $data["health"] == null){
+      header("Location: " . path("/brawler/atualBrawler/$id"));
+      die();
+    }
+
     header("Location: " . path("/brawler"));
     die();
   }

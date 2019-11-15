@@ -58,6 +58,11 @@ class Autenticar extends Controller
             "ativo" => true
         ];
 
+        if($data["id_utilizador"] == null || $data["palavra_passe"] == null || $data["nome"] == null){
+            header("Location: " . path("/autenticar/criarUser"));
+            die();
+          }
+          
         $conn = new Db();
         $res = $conn->execNonQuery('INSERT INTO utilizador 
         (id_utilizador, palavra_passe, nome, ativo) 

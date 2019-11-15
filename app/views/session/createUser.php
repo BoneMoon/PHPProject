@@ -30,12 +30,12 @@
             <label for="exampleFormControlInput1">Palavra-passe:</label>
             <input type="password" name="palavra_passe" class="form-control bBorder" id="exampleFormControlInput1" placeholder="Palavra-Passe">
         </div>
-        <div class="row pt-5 mx-auto" style="float: right">
+        <div class="row pt-5 mx-auto" style="">
             <input type="submit" class="btn btn-success buttonsSameWidth" value="Criar Conta" >
         </div>
         <div class="pt-5">
-      <button type="submit" class="btn btn-primary buttonsSameWidth"><a href="<?= path("/autenticar/login") ?>"></a> voltar</button>
-    </div>
+            <button type="submit" class="btn btn-primary buttonsSameWidth"><a href="<?= path("/autenticar/login") ?>"></a> voltar</button>
+        </div>
     </form>
 
     </section>
