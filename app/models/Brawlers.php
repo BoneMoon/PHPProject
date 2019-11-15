@@ -1,9 +1,6 @@
 <?php
-
 namespace app\models;
-
 use app\core\Db;
-
 class Brawlers
 {
   /**
@@ -17,7 +14,6 @@ class Brawlers
     $response = $conn->execQuery('SELECT * FROM brawlers');
     return $response;
   }
-
   /**
    * Método para a obtenção de um brawler pelo id correspondente
    * @param    int     $id   Id. do brawler
@@ -28,14 +24,12 @@ class Brawlers
   {
     $conn = new Db();
     $response = $conn->execQuery('SELECT * FROM brawlers WHERE id = ?', array('i', array($id)));
-
     if (count($response) <= 0) {
       return null;
     } else {
       return $response[0];
     }
   }
-
   public static function createBrawler($data)
   {
     $conn = new Db();
@@ -46,14 +40,12 @@ class Brawlers
       $data["image"], $data['role'], $data["health"], $data["speed"]
     ]]);
   }
-
   public static function RemoveBrawler($id)
   {
     $conn = new Db();
     $querry = 'DELETE FROM brawlers WHERE id = ?';
     return $conn->execNonQuery($querry, ["i", [$id]]);
   }
-
   public static function updateBrawler($data, $id)
   {
     $conn = new Db();

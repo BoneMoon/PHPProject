@@ -1,3 +1,4 @@
+<!-- é aqui que tens de pôr a cena dos botões -->
 <nav class="navbar PersonalizaNavBar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="<?= path("/") ?>">
@@ -8,19 +9,18 @@
         </button>
 
         <div class="collapse navbar-collapse" id="nav-top">
-            <form class="form-inline mx-auto my-2 my-lg-0">
-                <input class="form-control mr-sm-2" id="CampoPesquiza" type="search" placeholder="Procurar Brawller" aria-label="Search">
-                <button class="btn my-2 my-sm-0" id="NavButton" type="submit">Pesquisar</button>
-            </form>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="<?= path("/app/views/session/login.php") ?>" id="NavButton" class="nav-link m-2">login</a>
+                
+            <?php if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) : ?>
+                <li class="nav-item buttonsSameWidth">
+                    <a href="<?= path("/autenticar/logout") ?>" id="NavButton" class="nav-link m-2">logout</a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?= path("/app/views/session/logout.php") ?>" id="NavButton" class="nav-link m-2">logout</a>
+            <?php else : ?>
+                <li class="nav-item buttonsSameWidth">
+                    <a href="<?= path("/autenticar/login") ?>" id="NavButton" class="nav-link m-2">login</a>
                 </li>
+            <?php endif; ?>
             </ul>
-
         </div>
     </div>
 </nav>
