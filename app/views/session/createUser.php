@@ -34,7 +34,7 @@
             <input type="submit" class="btn btn-success buttonsSameWidth" value="Criar Conta" >
         </div>
         <div class="pt-5">
-            <button type="submit" class="btn btn-primary buttonsSameWidth"><a href="<?= path("/autenticar/login") ?>"></a> voltar</button>
+        <input type="button" value="Voltar" class="btn btn-primary" id="btnHome" onClick="document.location.href='<?= path("/autenticar/login") ?>'" />
         </div>
     </form>
 

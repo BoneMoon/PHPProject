@@ -23,7 +23,7 @@
   <section class="container mt-2" style="margin-top: 80px">
     <div class="row mx-auto">
       <div class="col-12">
-        <h1 style="color: white; text-align: center;">**BrawlSatrs**</h1>
+        <h1 style="color: white; text-align: center;">**BrawlStars**</h1>
       </div>
     </div>
   </section>
@@ -32,7 +32,7 @@
   <div class="container">
     <div class="row m-3">
       <section>
-        <img class="mx-auto d-block" src="assets/imgs/imgHomePage.jpeg" alt="" style="width: 80%;">
+        <img class="mx-auto d-block" src="assets/imgs/imgHomePage.jpeg" alt="" style="width: 90%; border-radius: 10px">
       </section>
     </div>
   </div>
@@ -42,7 +42,7 @@
   <div class="container">
     <div class="row m-5">
       <!-- Primeiro  -->
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6">
         <div class="card mx-auto cardLayout PersonalizarCardList">
           <div>
             <img src="assets/imgs/Gene.png" alt="imageLeft" class="img-fluid imageCards">
@@ -53,7 +53,7 @@
         </div>
       </div>
       <!-- Segundo  -->
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6">
         <div class="card cardLayout PersonalizarCardList">
           <div>
             <img src="assets/imgs/Jessie.png" alt="imageLeft" class="img-fluid imageCards">
@@ -64,7 +64,7 @@
         </div>
       </div>
       <!-- Terceiro  -->
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6">
         <div class="card mx-auto cardLayout PersonalizarCardList">
           <div>
             <img src="assets/imgs/Leon.png" alt="imageLeft" class="img-fluid imageCards">
@@ -79,12 +79,12 @@
 
   <!-- Butão de link para a lista de Brawlers  -->
   </section>
-  <div class="container mt-5">
-    <div class="row mx-auto d-block">
+  <div class="container m-3 mx-auto">
+    <div class="row">
       <?php if (isset($_SESSION['userId']) && !empty($_SESSION['userId'])) : ?>
-        <a type="button" href="<?= path("/brawler") ?>" class="btn btn-lg btn-primary ative">Ver Lista Completa de Brawlers</a>
+        <a type="button" href="<?= path("/brawler") ?>" class="btn btn-lg btn-primary ative mx-auto">Ver Lista Completa de Brawlers</a>
       <?php else : ?>
-        <button type="button" class="btn btn-lg btn-primary ative" disabled>Ver Lista Completa de Brawlers</button>
+        <button type="button" class="btn btn-lg btn-primary mx-auto" disabled>Ver Lista Completa de Brawlers</button>
       <?php endif; ?>
     </div>
   </div>

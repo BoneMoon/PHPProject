@@ -61,7 +61,8 @@
                     <input type="File" name="image" class="form-control borderForms" id="ficheiro" placeholder="600">
                 </div>
                 <div class="row pt-5">
-                    <input type="submit" class="btn btn-primary" value="Atualizar Brawler">
+                    <input type="button" value="voltar" class="btn btn-primary mx-2" id="btnHome" onClick="document.location.href='<?= path("/brawler/atualBrawler/{$brawler['id']}") ?>'" />
+                    <input type="submit" class="btn btn-success mx-2" value="Atualizar Brawler">
                 </div>
         </form>
         <?php require __DIR__ . "/../partial/scripts.php" ?>

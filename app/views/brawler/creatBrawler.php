@@ -17,7 +17,7 @@
       <h3 style="color: white;">Insira os dados para criar um novo Brawler</h3>
     </div>
     <form method="POST" enctype="multipart/form-data" action="<?= path("/brawler/createBrawler") ?>">
-    <div class="row">
+    <div class="row" style="color: white">
         <div class="col-md-8 pt-5">
           <div class="form-group">
             <label for="exampleFormControlInput1">Nome:</label>
@@ -61,8 +61,10 @@
             <input type="File" name="image" class="form-control borderForms" id="ficheiro" placeholder="600">
     </div>
     <div class="row pt-5">
-            <input type="submit" class="btn btn-primary" value="Criar Brawler">
-          </div>
+            <input type="button" value="voltar" class="btn btn-primary mx-2" id="btnHome" onClick="document.location.href='<?= path("/brawler") ?>'" />
+            <input type="submit" class="btn btn-success" value="Criar Brawler">
+    </div>
+    
     </form>
     <?php require __DIR__ . "/../partial/scripts.php" ?>
 </body>

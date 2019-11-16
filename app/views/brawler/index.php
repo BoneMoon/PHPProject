@@ -12,14 +12,15 @@
 
 <body>
   <?php require __DIR__ . "/../partial/navBar.php" ?>
-  <section class="container pt-5" style="color: white; text-align: center">
-    <h1>Lista de Brawlers</h1>
+  <section class="container pt-3" style="color: white; ">
+    <h1 style=" text-align: center;">Lista de Brawlers</h1>
+    <input type="button" value="Criar Brawler" class="btn btn-success my-2 mx-2" id="btnHome" onClick="document.location.href='<?= path("/brawler/criarBrawler") ?>'" />
   </section>
 
-  <div class="container pt-5">
+  <div class="container pt-3">
     <div class="row">
       <?php foreach ($brawlers as $brawler) : ?>
-        <div class="col-md-4 py-3">
+        <div class="col-lg-4 col-md-6 py-3">
           <div class="card cardLayout PersonalizarCardList scaleAnim" style="width: 18rem;">
             <img src="<?= "/brawlstars/{$brawler['image']}" ?>" class="img-fluid imageCards" alt="brawler image">
             <div class="card-body">

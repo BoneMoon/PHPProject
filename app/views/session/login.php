@@ -40,12 +40,13 @@
             <div class="row mx-auto pt-5" style="float: right">
                 <input type="submit" class="btn btn-success buttonsSameWidth" value="login">
             </div>
-            <div class="pt-5">
-                <button class="btn btn-primary buttonsSameWidth"><a href="<?= path("/") ?>">Voltar</a></button>
-            </div>
-            </section>
-        </div>
         </form>
+        <div class="pt-5">
+            <input type="button" value="Voltar" class="btn btn-primary" id="btnHome" onClick="document.location.href='<?= path("/") ?>'" />
+            <input type="button" value="Criar Conta" class="btn btn-primary" id="btnHome" onClick="document.location.href='<?= path("/autenticar/criarUser") ?>'" />
+        </div>
+    </section>
+    </div>     
         <?php
             } else {
         ?>
